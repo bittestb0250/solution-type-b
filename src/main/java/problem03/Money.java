@@ -10,21 +10,44 @@ public class Money {
 	private int amount;
 	
 	public Money(int amount) {
+		this.amount = amount;
 	}
 
 	public Money add(Money money) {
-		return null;
+		return new Money(getAmount() + money.getAmount());
 	}
 
 	public Money minus(Money money) {
-		return null;
+		return new Money(getAmount() - money.getAmount());
 	}
 
 	public Money multiply(Money money) {
-		return null;
+		return new Money(getAmount() * money.getAmount());
 	}
 
 	public Money devide(Money money) {
-		return null;
+		return new Money(getAmount() / money.getAmount());
 	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Money) {
+			return getAmount()==((Money)obj).getAmount();
+		}
+		return super.equals(obj);
+	}
+
+	
+	
+	
+	
+	
 }

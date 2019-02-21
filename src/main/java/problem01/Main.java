@@ -11,6 +11,18 @@ public class Main {
 		//
 		// 코드를 완성 하십시오.
 		//
+		int[] answer = new int[2];
+		int max= arr[0]*arr[1];
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = i+1; j < arr.length; j++) {
+				if(max < arr[i]*arr[j]) {
+					max = arr[i]*arr[j];
+					answer[0] = arr[i];
+					answer[1] = arr[j];
+				}
+			}
+		}
 		
+		System.out.println("["+answer[0]+","+answer[1]+"]");
 	}
 }
